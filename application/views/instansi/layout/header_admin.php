@@ -22,7 +22,7 @@
   <!-- Custom styles for this page -->
   <link href="<?= base_url('asset/vendor/datatables/') ?>dataTables.bootstrap4.min.css" rel="stylesheet">
 
-  <link rel="shortcut icon" href="../../assets/css/logo_utu.png" />
+  <link rel="shortcut icon" href="../../siami/assets/css/logo_utu.png" />
 
 
 </head>
