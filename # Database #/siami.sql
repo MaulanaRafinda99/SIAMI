@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Okt 2024 pada 09.22
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.3
+-- Generation Time: Nov 19, 2024 at 10:32 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `akun`
+-- Table structure for table `akun`
 --
 
 CREATE TABLE `akun` (
@@ -36,14 +35,14 @@ CREATE TABLE `akun` (
   `Nama` varchar(50) DEFAULT NULL,
   `NIP` int(20) DEFAULT NULL,
   `NIDN` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `akun`
+-- Dumping data for table `akun`
 --
 
 INSERT INTO `akun` (`id_user`, `username`, `password`, `level`, `Nama`, `NIP`, `NIDN`) VALUES
-(1, 'Admin', '21232f297a57a5a743894a0e4a801fc3', 1, NULL, NULL, NULL),
+(1, 'Admin', 'ae58fe7cdb36b21f2016414a035bd31b', 1, NULL, NULL, NULL),
 (4, 'admin2', '21232f297a57a5a743894a0e4a801fc3', 2, NULL, NULL, NULL),
 (5, 'teknik informatika', '270007185d0f4b290ded51f9345a7f29', 2, NULL, NULL, NULL),
 (9, 'akuntansi', '1139f90d50ba3bb7ff4b2602ad03aa26', 2, NULL, NULL, NULL),
@@ -62,7 +61,7 @@ INSERT INTO `akun` (`id_user`, `username`, `password`, `level`, `Nama`, `NIP`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_ami`
+-- Table structure for table `data_ami`
 --
 
 CREATE TABLE `data_ami` (
@@ -78,48 +77,23 @@ CREATE TABLE `data_ami` (
   `jadwal` date DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `hasil_audit` varchar(255) DEFAULT NULL,
-  `bobot` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `bobot` int(1) DEFAULT NULL,
+  `komentar` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `data_ami`
+-- Dumping data for table `data_ami`
 --
 
-INSERT INTO `data_ami` (`id_transaksi`, `id_instansi`, `nama_instansi`, `id_sndikti`, `sndikti`, `iku_sndikti`, `id_siklus`, `kode_siklus`, `tahun`, `jadwal`, `link`, `hasil_audit`, `bobot`) VALUES
-(1, 3, 'Teknologi Informasi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 2, 'XI', 2025, '2024-08-19', 'http://localhost/siami/uploads/647-2472-1-PB.pdf', 'http://localhost/siami/uploads/hasil_audit/529-1125-1-SM.pdf', 12),
-(2, 3, 'Teknologi Informasi', 1, 'ABC', 'A', 2, 'XI', 2025, NULL, 'http://localhost/siami/uploads/214-887-1-PB1.pdf', NULL, 12),
-(5, 3, 'Teknologi Informasi', 12, 'zzz', 'zzz', 1, 'X', 2024, '2024-08-13', NULL, NULL, NULL),
-(7, 4, 'Agribisnis', 1, 'ABC', 'A', 1, 'X', 2024, NULL, NULL, NULL, 2),
-(8, 4, 'Agribisnis', 1, 'ABC', 'A', 2, 'XI', 2025, NULL, NULL, NULL, 3),
-(9, 4, 'Agribisnis', 12, 'zzz', 'zzz', 1, 'X', 2024, NULL, NULL, NULL, 1),
-(11, 4, 'Agribisnis', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 1, 'X', 2024, NULL, NULL, NULL, 0),
-(12, 4, 'Agribisnis', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 2, 'XI', 2025, NULL, NULL, NULL, 0),
-(13, 5, 'Agroteknologi', 1, 'ABC', 'A', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(14, 5, 'Agroteknologi', 1, 'ABC', 'A', 2, 'XI', 2025, NULL, 'http://localhost/siami/uploads/Simbol_ERD.pdf', 'http://localhost/siami/uploads/hasil_audit/738-1898-1-PB.pdf', 1),
-(15, 5, 'Agroteknologi', 12, 'zzz', 'zzz', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(17, 5, 'Agroteknologi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(18, 5, 'Agroteknologi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 2, 'XI', 2025, NULL, NULL, NULL, 2),
-(19, 6, 'Akuakultur', 1, 'ABC', 'A', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(21, 6, 'Akuakultur', 12, 'zzz', 'zzz', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(23, 6, 'Akuakultur', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 1, 'X', 2024, NULL, NULL, NULL, NULL),
-(24, 6, 'Akuakultur', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 2, 'XI', 2025, NULL, NULL, NULL, NULL),
-(25, 3, 'Teknologi Informasi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 1, 'X', 2024, '2024-08-13', NULL, NULL, NULL),
-(26, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, NULL, NULL, 2025, '2024-08-19', NULL, NULL, NULL),
-(27, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, NULL, '202', 2025, '2024-08-19', NULL, NULL, NULL),
-(28, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, NULL, '202', 2025, '2024-08-19', NULL, NULL, NULL),
-(29, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, NULL, 'X', 2025, '2024-08-19', NULL, NULL, NULL),
-(30, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, NULL, 'X', 2024, '2024-08-19', NULL, NULL, NULL),
-(31, 1, 'Teknologi Informasi', 14, 'Test Add', NULL, 1, 'X', 2024, '2024-08-19', NULL, NULL, NULL),
-(32, NULL, 'Teknologi Informasi', NULL, 'Test Add', NULL, 1, 'X', 2024, '2024-08-19', NULL, NULL, NULL),
-(33, NULL, 'Agribisnis', NULL, 'Test Add', 'IKU Test', 2, 'XI', 2025, '2024-08-19', NULL, NULL, NULL),
-(37, 3, 'Teknologi Informasi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 1, 'X', 2024, '2024-08-14', NULL, NULL, NULL),
-(38, 3, 'Teknologi Informasi', 13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 2, 'XI', 2025, '2024-08-19', NULL, NULL, NULL),
-(39, 3, 'Teknologi Informasi', 14, 'Test Add', 'IKU Test', 2, 'XI', 2025, '2024-08-13', NULL, NULL, NULL);
+INSERT INTO `data_ami` (`id_transaksi`, `id_instansi`, `nama_instansi`, `id_sndikti`, `sndikti`, `iku_sndikti`, `id_siklus`, `kode_siklus`, `tahun`, `jadwal`, `link`, `hasil_audit`, `bobot`, `komentar`) VALUES
+(40, 3, 'Teknologi Informasi', 15, 'Visi, Misi, Tujuan dan Strategi', 'Kepuasan Layanan Pendidikan', 1, 'X', 2024, '2024-08-13', 'http://localhost/siami/uploads/Simbol_Use_case1.pdf', 'http://localhost/siami/uploads/hasil_audit/299-767-1-SM1.pdf', 12, 'Test Komentar'),
+(41, 3, 'Teknologi Informasi', 17, 'Sistem Pembelajaran', 'Evaluasi Kurikulum', 2, 'XI', 2025, '2024-08-13', NULL, NULL, NULL, NULL),
+(42, 3, 'Teknologi Informasi', 16, 'Sumber Daya Manusia', 'Kompetensi Tenaga Pendidik', 1, 'X', 2024, '2024-11-22', NULL, NULL, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_asesor`
+-- Table structure for table `data_asesor`
 --
 
 CREATE TABLE `data_asesor` (
@@ -127,10 +101,10 @@ CREATE TABLE `data_asesor` (
   `id_siklus` int(11) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   `id_instansi` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `data_asesor`
+-- Dumping data for table `data_asesor`
 --
 
 INSERT INTO `data_asesor` (`id_data_asesor`, `id_siklus`, `id_user`, `id_instansi`) VALUES
@@ -139,7 +113,7 @@ INSERT INTO `data_asesor` (`id_data_asesor`, `id_siklus`, `id_user`, `id_instans
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -147,10 +121,10 @@ CREATE TABLE `dosen` (
   `id_prodi` int(11) NOT NULL,
   `jumlah_dosen` int(11) NOT NULL,
   `tahun_ajaran` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `id_prodi`, `jumlah_dosen`, `tahun_ajaran`) VALUES
@@ -185,16 +159,16 @@ INSERT INTO `dosen` (`id_dosen`, `id_prodi`, `jumlah_dosen`, `tahun_ajaran`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fakultas`
+-- Table structure for table `fakultas`
 --
 
 CREATE TABLE `fakultas` (
   `id_fakultas` int(11) NOT NULL,
   `nama_fakultas` varchar(251) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `fakultas`
+-- Dumping data for table `fakultas`
 --
 
 INSERT INTO `fakultas` (`id_fakultas`, `nama_fakultas`) VALUES
@@ -209,7 +183,7 @@ INSERT INTO `fakultas` (`id_fakultas`, `nama_fakultas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `instansi`
+-- Table structure for table `instansi`
 --
 
 CREATE TABLE `instansi` (
@@ -217,10 +191,10 @@ CREATE TABLE `instansi` (
   `id_jenis_instansi` int(3) NOT NULL,
   `nama_instansi` varchar(255) NOT NULL,
   `deskripsi` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `instansi`
+-- Dumping data for table `instansi`
 --
 
 INSERT INTO `instansi` (`id_instansi`, `id_jenis_instansi`, `nama_instansi`, `deskripsi`) VALUES
@@ -232,7 +206,7 @@ INSERT INTO `instansi` (`id_instansi`, `id_jenis_instansi`, `nama_instansi`, `de
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jadwal_audit`
+-- Table structure for table `jadwal_audit`
 --
 
 CREATE TABLE `jadwal_audit` (
@@ -240,30 +214,31 @@ CREATE TABLE `jadwal_audit` (
   `siklus` varchar(20) NOT NULL,
   `jadwal` date NOT NULL,
   `keterangan` varchar(255) DEFAULT '-'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `jadwal_audit`
+-- Dumping data for table `jadwal_audit`
 --
 
 INSERT INTO `jadwal_audit` (`id`, `siklus`, `jadwal`, `keterangan`) VALUES
 (4, '2025', '2024-08-13', 'Test Update'),
 (5, '2024', '2024-08-19', ''),
-(6, '2025', '2024-08-14', 'Jadwal Test');
+(6, '2025', '2024-08-14', 'Jadwal Test'),
+(8, '2024', '2024-11-22', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_instansi`
+-- Table structure for table `jenis_instansi`
 --
 
 CREATE TABLE `jenis_instansi` (
   `id_jenis_instansi` int(3) NOT NULL,
   `nama_jenis` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `jenis_instansi`
+-- Dumping data for table `jenis_instansi`
 --
 
 INSERT INTO `jenis_instansi` (`id_jenis_instansi`, `nama_jenis`) VALUES
@@ -275,7 +250,7 @@ INSERT INTO `jenis_instansi` (`id_jenis_instansi`, `nama_jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `prodi`
+-- Table structure for table `prodi`
 --
 
 CREATE TABLE `prodi` (
@@ -283,10 +258,10 @@ CREATE TABLE `prodi` (
   `nama_prodi` varchar(255) NOT NULL,
   `id_fakultas` int(11) NOT NULL,
   `id_jenjang` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `prodi`
+-- Dumping data for table `prodi`
 --
 
 INSERT INTO `prodi` (`id_prodi`, `nama_prodi`, `id_fakultas`, `id_jenjang`) VALUES
@@ -324,7 +299,7 @@ INSERT INTO `prodi` (`id_prodi`, `nama_prodi`, `id_fakultas`, `id_jenjang`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siklus`
+-- Table structure for table `siklus`
 --
 
 CREATE TABLE `siklus` (
@@ -334,20 +309,20 @@ CREATE TABLE `siklus` (
   `sekarang` int(3) NOT NULL,
   `mulai` date DEFAULT NULL,
   `batas` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `siklus`
+-- Dumping data for table `siklus`
 --
 
 INSERT INTO `siklus` (`id_siklus`, `kode_siklus`, `tahun`, `sekarang`, `mulai`, `batas`) VALUES
-(1, 'X', 2024, 0, '2024-04-02', '2024-04-23'),
-(2, 'XI', 2025, 1, '0000-00-00', '0000-00-00');
+(1, 'X', 2024, 1, '2024-04-02', '2024-04-23'),
+(2, 'XI', 2025, 0, '2024-11-20', '2024-12-28');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sndikti`
+-- Table structure for table `sndikti`
 --
 
 CREATE TABLE `sndikti` (
@@ -357,30 +332,30 @@ CREATE TABLE `sndikti` (
   `jadwal` date DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `bobot` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `sndikti`
+-- Dumping data for table `sndikti`
 --
 
 INSERT INTO `sndikti` (`id_sndikti`, `sndikti`, `iku_sndikti`, `jadwal`, `link`, `bobot`) VALUES
-(12, 'zzz', 'zzz', NULL, NULL, NULL),
-(13, 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', 'I have successfully created a registration and login system. I have used useremail and password in the login form and I want to display the username and other properties related to that logged in user.', NULL, NULL, NULL),
-(14, 'Test Add', 'IKU Test', '2024-08-19', NULL, NULL);
+(15, 'Visi, Misi, Tujuan dan Strategi', 'Kepuasan Layanan Pendidikan', '2024-11-22', NULL, NULL),
+(16, 'Sumber Daya Manusia', 'Kompetensi Tenaga Pendidik', '2024-11-22', NULL, NULL),
+(17, 'Sistem Pembelajaran', 'Evaluasi Kurikulum', '2024-08-13', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tingkat_prestasi`
+-- Table structure for table `tingkat_prestasi`
 --
 
 CREATE TABLE `tingkat_prestasi` (
   `id_tingkat` int(11) NOT NULL,
   `tingkat` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tingkat_prestasi`
+-- Dumping data for table `tingkat_prestasi`
 --
 
 INSERT INTO `tingkat_prestasi` (`id_tingkat`, `tingkat`) VALUES
@@ -391,17 +366,17 @@ INSERT INTO `tingkat_prestasi` (`id_tingkat`, `tingkat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_access_data`
+-- Table structure for table `user_access_data`
 --
 
 CREATE TABLE `user_access_data` (
   `id` int(11) NOT NULL,
   `akun` int(11) NOT NULL,
   `id_instansi` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user_access_data`
+-- Dumping data for table `user_access_data`
 --
 
 INSERT INTO `user_access_data` (`id`, `akun`, `id_instansi`) VALUES
@@ -413,24 +388,24 @@ INSERT INTO `user_access_data` (`id`, `akun`, `id_instansi`) VALUES
 (100, 4, 4),
 (101, 4, 6),
 (111, 20, 3),
-(112, 19, 3),
 (113, 21, 5),
-(114, 22, 5);
+(114, 22, 5),
+(116, 19, 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_access_menu`
+-- Table structure for table `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `user_access_menu`
+-- Dumping data for table `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
@@ -442,17 +417,17 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_level`
+-- Table structure for table `user_level`
 --
 
 CREATE TABLE `user_level` (
   `id` int(11) NOT NULL,
   `level` varchar(255) NOT NULL,
   `ket` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user_level`
+-- Dumping data for table `user_level`
 --
 
 INSERT INTO `user_level` (`id`, `level`, `ket`) VALUES
@@ -463,16 +438,16 @@ INSERT INTO `user_level` (`id`, `level`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_menu`
+-- Table structure for table `user_menu`
 --
 
 CREATE TABLE `user_menu` (
   `id` int(11) NOT NULL,
   `menu` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `user_menu`
+-- Dumping data for table `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
@@ -485,7 +460,7 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_sub_menu`
+-- Table structure for table `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -495,10 +470,10 @@ CREATE TABLE `user_sub_menu` (
   `url` varchar(128) NOT NULL,
   `icon` varchar(128) NOT NULL,
   `is_active` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `user_sub_menu`
+-- Dumping data for table `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
@@ -525,20 +500,20 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 --
 
 --
--- Indeks untuk tabel `akun`
+-- Indexes for table `akun`
 --
 ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `user_ibfk_1` (`level`);
 
 --
--- Indeks untuk tabel `data_ami`
+-- Indexes for table `data_ami`
 --
 ALTER TABLE `data_ami`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- Indeks untuk tabel `data_asesor`
+-- Indexes for table `data_asesor`
 --
 ALTER TABLE `data_asesor`
   ADD PRIMARY KEY (`id_data_asesor`),
@@ -547,7 +522,7 @@ ALTER TABLE `data_asesor`
   ADD KEY `id_siklus` (`id_siklus`);
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`),
@@ -555,32 +530,32 @@ ALTER TABLE `dosen`
   ADD KEY `prodi_id` (`id_prodi`);
 
 --
--- Indeks untuk tabel `fakultas`
+-- Indexes for table `fakultas`
 --
 ALTER TABLE `fakultas`
   ADD PRIMARY KEY (`id_fakultas`);
 
 --
--- Indeks untuk tabel `instansi`
+-- Indexes for table `instansi`
 --
 ALTER TABLE `instansi`
   ADD PRIMARY KEY (`id_instansi`),
   ADD KEY `id_jenis` (`id_jenis_instansi`);
 
 --
--- Indeks untuk tabel `jadwal_audit`
+-- Indexes for table `jadwal_audit`
 --
 ALTER TABLE `jadwal_audit`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jenis_instansi`
+-- Indexes for table `jenis_instansi`
 --
 ALTER TABLE `jenis_instansi`
   ADD PRIMARY KEY (`id_jenis_instansi`);
 
 --
--- Indeks untuk tabel `prodi`
+-- Indexes for table `prodi`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`),
@@ -588,25 +563,25 @@ ALTER TABLE `prodi`
   ADD KEY `id_jenjang` (`id_jenjang`);
 
 --
--- Indeks untuk tabel `siklus`
+-- Indexes for table `siklus`
 --
 ALTER TABLE `siklus`
   ADD PRIMARY KEY (`id_siklus`);
 
 --
--- Indeks untuk tabel `sndikti`
+-- Indexes for table `sndikti`
 --
 ALTER TABLE `sndikti`
   ADD PRIMARY KEY (`id_sndikti`);
 
 --
--- Indeks untuk tabel `tingkat_prestasi`
+-- Indexes for table `tingkat_prestasi`
 --
 ALTER TABLE `tingkat_prestasi`
   ADD PRIMARY KEY (`id_tingkat`);
 
 --
--- Indeks untuk tabel `user_access_data`
+-- Indexes for table `user_access_data`
 --
 ALTER TABLE `user_access_data`
   ADD PRIMARY KEY (`id`),
@@ -614,7 +589,7 @@ ALTER TABLE `user_access_data`
   ADD KEY `data_instansi` (`id_instansi`);
 
 --
--- Indeks untuk tabel `user_access_menu`
+-- Indexes for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`),
@@ -622,130 +597,130 @@ ALTER TABLE `user_access_menu`
   ADD KEY `menu_id` (`role_id`) USING BTREE;
 
 --
--- Indeks untuk tabel `user_level`
+-- Indexes for table `user_level`
 --
 ALTER TABLE `user_level`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_menu`
+-- Indexes for table `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_sub_menu`
+-- Indexes for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`),
   ADD KEY `menu_id` (`menu_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `akun`
+-- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT untuk tabel `data_ami`
+-- AUTO_INCREMENT for table `data_ami`
 --
 ALTER TABLE `data_ami`
-  MODIFY `id_transaksi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_transaksi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT untuk tabel `data_asesor`
+-- AUTO_INCREMENT for table `data_asesor`
 --
 ALTER TABLE `data_asesor`
   MODIFY `id_data_asesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `dosen`
+-- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
   MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT untuk tabel `fakultas`
+-- AUTO_INCREMENT for table `fakultas`
 --
 ALTER TABLE `fakultas`
   MODIFY `id_fakultas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `instansi`
+-- AUTO_INCREMENT for table `instansi`
 --
 ALTER TABLE `instansi`
   MODIFY `id_instansi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `jadwal_audit`
+-- AUTO_INCREMENT for table `jadwal_audit`
 --
 ALTER TABLE `jadwal_audit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_instansi`
+-- AUTO_INCREMENT for table `jenis_instansi`
 --
 ALTER TABLE `jenis_instansi`
   MODIFY `id_jenis_instansi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `prodi`
+-- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT untuk tabel `siklus`
+-- AUTO_INCREMENT for table `siklus`
 --
 ALTER TABLE `siklus`
   MODIFY `id_siklus` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `sndikti`
+-- AUTO_INCREMENT for table `sndikti`
 --
 ALTER TABLE `sndikti`
-  MODIFY `id_sndikti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_sndikti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `tingkat_prestasi`
+-- AUTO_INCREMENT for table `tingkat_prestasi`
 --
 ALTER TABLE `tingkat_prestasi`
   MODIFY `id_tingkat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `user_access_data`
+-- AUTO_INCREMENT for table `user_access_data`
 --
 ALTER TABLE `user_access_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
--- AUTO_INCREMENT untuk tabel `user_access_menu`
+-- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT untuk tabel `user_sub_menu`
+-- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `akun`
+-- Constraints for table `akun`
 --
 ALTER TABLE `akun`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`level`) REFERENCES `user_level` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `data_asesor`
+-- Constraints for table `data_asesor`
 --
 ALTER TABLE `data_asesor`
   ADD CONSTRAINT `id_instansi` FOREIGN KEY (`id_instansi`) REFERENCES `instansi` (`id_instansi`),
@@ -753,19 +728,19 @@ ALTER TABLE `data_asesor`
   ADD CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `akun` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `dosen`
+-- Constraints for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD CONSTRAINT `prodi_id` FOREIGN KEY (`id_prodi`) REFERENCES `prodi` (`id_prodi`);
 
 --
--- Ketidakleluasaan untuk tabel `instansi`
+-- Constraints for table `instansi`
 --
 ALTER TABLE `instansi`
   ADD CONSTRAINT `id_jenis` FOREIGN KEY (`id_jenis_instansi`) REFERENCES `jenis_instansi` (`id_jenis_instansi`);
 
 --
--- Ketidakleluasaan untuk tabel `user_access_data`
+-- Constraints for table `user_access_data`
 --
 ALTER TABLE `user_access_data`
   ADD CONSTRAINT `data_instansi` FOREIGN KEY (`id_instansi`) REFERENCES `instansi` (`id_instansi`),
