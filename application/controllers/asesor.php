@@ -134,6 +134,7 @@ class asesor extends CI_Controller
             $update_data = [
                 'id_transaksi' => $data['id'][$i],
                 'bobot' => $data['bobot'][$i],
+                'komentar' => $data['komentar'][$i],
             ];
 
             if (!empty($files['file']['name'][$i])) {

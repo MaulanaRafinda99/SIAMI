@@ -185,8 +185,8 @@ class instansi extends CI_Controller
         $data['id'] = $this->session->userdata('id_user');
         $data['ins'] = $this->session->userdata('id_instansi');
 
-        $data['kode_siklus'] = $this->session->userdata('kode_siklus');
-        $data['id_siklus_sekarang'] = $this->session->userdata('id_siklus_sekarang');
+        $data['kode_siklus'] = "X";
+        $data['id_siklus_sekarang'] = 1;
 
         $data['sndikti'] = $this->model_instansi->getsndikti2($data['ins'], $data['id_siklus_sekarang']);
         $data['instansi'] = $this->model_instansi->getinstansi($data['ins']);

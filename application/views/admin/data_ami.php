@@ -1,3 +1,5 @@
+
+<!-- End of Sidebar -->
 <div class="container-fluid">
 
     <div class="mb-4">
@@ -58,6 +60,7 @@
                                 <th>IKU SNDIKTI</th>
                                 <th>Link Dokumen</th>
                                 <th>Bobot</th>
+                                <th>Komentar</th>
                                 <th rowspan="2" colspan="2">Aksi</th>
                             </tr>
                         </thead>
@@ -75,6 +78,7 @@
                                     <td align="justify"><?= $ami['iku_sndikti'] ?></td>
                                     <td><a href="<?= $ami['link'] ?>" target="_blank">Dokumen</a></td>
                                     <td><?= $ami['bobot'] ?></td>
+                                    <td><?= $ami['komentar'] ?></td>
                                     <td><?php echo anchor('admin/edit_data_ami/' . $ami['id_transaksi'], ('<div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>')); ?></td>
                                     <td>
                                         <div onclick="javascript: return confirm('Anda yakin ingin menghapus data ini ?')"><?php echo anchor('admin/hapus_data_ami/' . $ami['id_transaksi'], ('<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></div>')); ?></div>

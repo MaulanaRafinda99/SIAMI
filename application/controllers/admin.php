@@ -200,9 +200,9 @@ class admin extends CI_Controller
 
 		$where = array('id_transaksi' => $id);
 		$data['data_ami'] = $this->model_admin->edit_data($where, 'data_ami')->result();
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/edit_data_ami', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -251,9 +251,9 @@ class admin extends CI_Controller
 		$data['komponen_sndikti'] = $this->model_admin->get_komponen_sndikti();
 		$data['jadwal_audit'] = $this->model_admin->get_jadwal_audit();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view("admin/komponen-sndikti", $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -264,9 +264,9 @@ class admin extends CI_Controller
 		$where = array('id_sndikti' => $id);
 		$data['komponen_sndikti'] = $this->model_admin->edit_data($where, 'sndikti')->result();
 		$data['jadwal_audit'] = $this->model_admin->get_jadwal_audit();
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/edit_komponen_sndikti', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -318,9 +318,9 @@ class admin extends CI_Controller
 	{
 		$data['jadwal_audit'] = $this->model_admin->get_jadwal_audit();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view("admin/jadwal_audit", $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -330,9 +330,9 @@ class admin extends CI_Controller
 	{
 		$data['jadwal_audit'] = $this->model_admin->get_jadwal_audit();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view("admin/debug", $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -343,9 +343,9 @@ class admin extends CI_Controller
 
 		$where = array('id' => $id);
 		$data['jadwal_audit'] = $this->model_admin->edit_data($where, 'jadwal_audit')->result();
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/edit_jadwal_audit', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -434,9 +434,9 @@ class admin extends CI_Controller
 
 		$data['users'] = $this->userM->getUsers($config['per_page'], $data['start'], $data['keyword'], $data['user']['level']);
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/manajemen_user', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -493,9 +493,9 @@ class admin extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 
-			$this->load->view("admin/layout/header_admin");
-			$this->load->view("admin/layout/sidebar", $data);
-			$this->load->view("admin/layout/topbar_admin");
+			// $this->load->view("admin/layout/header_admin");
+			// $this->load->view("admin/layout/sidebar", $data);
+			// $this->load->view("admin/layout/topbar_admin");
 			$this->load->view('admin/manajemen_akses', $data);
 			$this->load->view("admin/layout/footer_admin");
 		} else {
@@ -517,9 +517,9 @@ class admin extends CI_Controller
 		$data['user'] = $this->db->get_where('akun', ['id_user' => $id])->row_array();
 		$data['menu'] = $this->db->get('instansi')->result_array();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/editakses', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -550,9 +550,9 @@ class admin extends CI_Controller
 	{
 		$data['instansi'] = $this->model_admin->get_instansi();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view("admin/data_instansi", $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -562,9 +562,9 @@ class admin extends CI_Controller
 
 		$where = array('id_instansi' => $id);
 		$data['instansi'] = $this->model_admin->edit_data($where, 'instansi')->result();
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/edit_instansi', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}
@@ -630,9 +630,9 @@ class admin extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 
-			$this->load->view("admin/layout/header_admin");
-			$this->load->view("admin/layout/sidebar", $data);
-			$this->load->view("admin/layout/topbar_admin");
+			// $this->load->view("admin/layout/header_admin");
+			// $this->load->view("admin/layout/sidebar", $data);
+			// $this->load->view("admin/layout/topbar_admin");
 			$this->load->view('admin/manajemen_asesor', $data);
 			$this->load->view("admin/layout/footer_admin");
 		} else {
@@ -654,9 +654,9 @@ class admin extends CI_Controller
 		$data['instansi'] = $this->db->get_where('instansi', ['id_instansi' => $id])->row_array();
 		$data['menu'] = $this->db->get_where('akun', ['level' => '3'])->result_array();
 
-		$this->load->view("admin/layout/header_admin");
-		$this->load->view("admin/layout/sidebar", $data);
-		$this->load->view("admin/layout/topbar_admin");
+		// $this->load->view("admin/layout/header_admin");
+		// $this->load->view("admin/layout/sidebar", $data);
+		// $this->load->view("admin/layout/topbar_admin");
 		$this->load->view('admin/edit_asesor', $data);
 		$this->load->view("admin/layout/footer_admin");
 	}

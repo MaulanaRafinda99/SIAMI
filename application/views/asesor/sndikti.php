@@ -27,6 +27,7 @@
                   <th>Hasil Audit</th>
                   <th>Upload Hasil Audit</th>
                   <th>Bobot</th>
+                  <th>Komentar</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,6 +55,7 @@
                     </td>
                     <td><input type="file" name="file[]" class="form-control-file"></td>
                     <td><textarea name="bobot[]" class="form-control"><?= $snd['bobot'] ?></textarea></td>
+                    <td><textarea name="komentar[]" class="form-control"><?= $snd['komentar'] ?></textarea></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>

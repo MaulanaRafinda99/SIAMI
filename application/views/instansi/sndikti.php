@@ -25,6 +25,8 @@
                   <th>IKU SNDIKTI</th>
                   <th>Dokumen</th>
                   <th>Upload Dokumen</th>
+                  <th>Bobot</th>
+                  <th>Komentar</th>
                   <th>Dokumen Hasil Audit</th>
                 </tr>
               </thead>
@@ -47,6 +49,8 @@
                     <td>
                       <input type="file" name="file[]" class="form-control-file">
                     </td>
+                    <td><textarea name="bobot[]" class="form-control" readonly><?= $snd['bobot'] ?></textarea></td>
+                    <td><textarea name="komentar[]" class="form-control" readonly><?= $snd['komentar'] ?></textarea></td>
                     <td style="color: #c0392b;">
                       <?php if (!empty($snd['hasil_audit'])) : ?>
                         <a style="color: #00A65A; font-weight:bold;" href=" <?= $snd['hasil_audit'] ?>" target="_blank">Lihat</a>
